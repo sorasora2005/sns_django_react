@@ -16,8 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from todo.views import ToDoViewSet
+from user_profile.views import ProfileViewSet, user_profile_list
+
+from rest_framework import routers
+from django.conf import settings
+
+from django.conf.urls.static import static
+
+
+router = routers.DefaultRouter()
+router.register(r'todo', ToDoViewSet)
+router.register(r'user_profile', ProfileViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('todo.urls')),
-]
+    path('api/', include(router.urls)),
+    path('user_profile_list/', user_profile_list, name='user_profile_list'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

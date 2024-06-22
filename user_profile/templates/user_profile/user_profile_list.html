@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile List</title>
+</head>
+<body>
+    <h1>Profiles</h1>
+    <ul>
+        {% for profile in Profiles %}
+        <li>
+            ID: {{ profile.id }} |
+            Name: {{ profile.name }} |
+            Checked: {{ profile.checked }} |
+            Gender: {{ profile.gender }} |
+            Comments: {{ profile.comments }} |
+            Items: {{ profile.items }} |
+            Age: {{ profile.age }} |
+            Place: {{ profile.place }} |
+            Image: {{profile.image}}
+        </li>
+        
+        {% endfor %}
+    </ul>
+</body>
+</html>
