@@ -1,2 +1,2 @@
-# drf_react_spa_backend
-SPA backend with Django_REST_Framework and React
+# This is backend app and here is frontend app
+<https://github.com/sorasora2005/sns_django_react_frontend>
